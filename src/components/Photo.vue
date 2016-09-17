@@ -17,4 +17,7 @@ export default {
 h1 {
   color: #42b983;
 }
+img {
+  width: 200px;
+}
 </style>
