@@ -1,10 +1,10 @@
 <template>
   <div class="">
     <photo :photo="food.photo"></photo>
-    <h1>{{ index }}</h1>
     <info :name="food.name" :price="food.price"></info>
     <vote :vote="food.vote" :up-vote="upVote" :index="index"></vote>
     <button @click="deleteFood(index)">X</button>
+    <hr>
   </div>
 </template>
 
