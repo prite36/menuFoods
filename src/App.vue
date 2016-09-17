@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <show-foods :foods="foods" :up-vote="upVote"></show-foods>
+    <show-foods :foods="foods" :up-vote="upVote" :delete-food="deleteFood"></show-foods>
     <add-food :add-food="addFood"></add-food>
   </div>
 </template>
@@ -19,7 +19,8 @@ export default {
         photo: 'https://lipotwin.files.wordpress.com/2016/01/vkskimtg.jpg',
         name: 'ต้มยำ',
         price: 100,
-        vote: 0
+        vote: 0,
+        id: 0
       }]
     }
   },
@@ -29,13 +30,17 @@ export default {
         photo: photo,
         name: name,
         price: price,
-        vote: 0
+        vote: 0,
+        id: this.foods.length
       }
       this.foods.push(data)
     },
     upVote: function (index) {
       console.log(index)
       this.foods[index].vote ++
+    },
+    deleteFood: function (index) {
+      this.foods.splice(index, 1)
     }
   }
 }

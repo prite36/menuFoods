@@ -4,6 +4,7 @@
     <h1>{{ index }}</h1>
     <info :name="food.name" :price="food.price"></info>
     <vote :vote="food.vote" :up-vote="upVote" :index="index"></vote>
+    <button @click="deleteFood(index)">X</button>
   </div>
 </template>
 
@@ -12,7 +13,7 @@ import Photo from './Photo'
 import Info from './Info'
 import Vote from './Vote'
 export default {
-  props: ['food', 'upVote', 'index'],
+  props: ['food', 'upVote', 'index', 'deleteFood'],
   data () {
     return {
     }

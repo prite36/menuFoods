@@ -1,6 +1,6 @@
 <template>
   <div v-for="food in foods | orderBy 'vote'-1">
-    <card :food="food" :up-vote="upVote" :index="$index"></card>
+    <card :food="food" :up-vote="upVote" :index="food.id" :delete-food="deleteFood"></card>
   </div>
 
 </template>
@@ -9,7 +9,7 @@
 import Card from './Card'
 
 export default {
-  props: ['foods', 'upVote'],
+  props: ['foods', 'upVote', 'deleteFood'],
   data () {
     return {
     }
